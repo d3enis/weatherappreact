@@ -1,0 +1,23 @@
+[33mcommit 00073a0c734df3136dcdcf50f851de6548522a1b[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m
+Author: d3enis <79760898+d3enis@users.noreply.github.com>
+Date:   Sun May 29 00:10:39 2022 +0200
+
+    Displaying city name , temp , wind speed by destructuring API objects
+
+[33mcommit 6ecdfe445c10311c5f171a06fe4117c86135e143[m
+Author: d3enis <79760898+d3enis@users.noreply.github.com>
+Date:   Sat May 28 23:44:26 2022 +0200
+
+    Fetching weather data
+
+[33mcommit 0866bb9420c04146eea3b3124b2ca7f10d877abf[m
+Author: d3enis <79760898+d3enis@users.noreply.github.com>
+Date:   Sat May 28 23:09:56 2022 +0200
+
+    Deleting unused files
+
+[33mcommit 1f18e453340b1dc419393ca4e5d2ffbbd1a24a14[m[33m ([m[1;32mmain[m[33m)[m
+Author: d3enis <79760898+d3enis@users.noreply.github.com>
+Date:   Sat May 28 23:06:32 2022 +0200
+
+    Starting files
