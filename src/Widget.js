@@ -3,15 +3,13 @@ import "./Widget.css";
 import { useEffect, useState } from "react";
 const Widget = () => {
   const [result, setResult] = useState("");
-  const [query, setQuery] = useState("");
-  const connectionString =
-    "https://api.openweathermap.org/data/2.5/weather?q=sisak&appid=a7836725816d0345b0a76f445a7b88eb&units=metric";
+  const [query, setQuery] = useState("Washington");
+  let connectionString = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=a7836725816d0345b0a76f445a7b88eb&units=metric`;
   useEffect(() => {
     axios.get(connectionString).then((response) => {
       setResult(response.data);
-      console.log(result);
     });
-  }, []);
+  }, [result]);
 
   const dateGenerator = (date) => {
     let days = [
@@ -47,14 +45,25 @@ const Widget = () => {
   };
 
   let {
-    name,
+    name = "",
     sys: { country } = "",
     main: { temp } = "",
-    weather: { 0: { main } = "" },
+    weather: { 0: { main } = "" } = "",
     wind: { speed } = "",
   } = result;
   return (
     <div className={temp > 15 ? "widget warm-bg" : "widget cold-bg"}>
+      <input
+        className="search"
+        value={query}
+        onChange={(e) => {
+          setQuery(e.target.value);
+        }}
+        onKeyPress={(e) => {
+          if (e.charCode == 13) setResult("");
+        }}
+        type="text"
+      />
       <h1 className="cityname">
         {name},{country}
       </h1>
