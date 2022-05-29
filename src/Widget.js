@@ -3,6 +3,7 @@ import "./Widget.css";
 import { useEffect, useState } from "react";
 const Widget = () => {
   const [result, setResult] = useState("");
+  const [query, setQuery] = useState("");
   const connectionString =
     "https://api.openweathermap.org/data/2.5/weather?q=sisak&appid=a7836725816d0345b0a76f445a7b88eb&units=metric";
   useEffect(() => {
@@ -49,16 +50,18 @@ const Widget = () => {
     name,
     sys: { country } = "",
     main: { temp } = "",
+    weather: { 0: { main } = "" },
     wind: { speed } = "",
   } = result;
   return (
-    <div className="widget warm-bg">
-      <h1>
+    <div className={temp > 15 ? "widget warm-bg" : "widget cold-bg"}>
+      <h1 className="cityname">
         {name},{country}
       </h1>
-      <p>{dateGenerator(new Date())}</p>
-      <p>Temp: {Math.round(temp)}℃</p>
-      <p>Wind speed : {speed} km/h</p>
+      <p className="date">{dateGenerator(new Date())}</p>
+      <p className="temp">{Math.round(temp)}℃</p>
+      <p className="desc"> {main}</p>
+      <p className="wind">Wind speed : {speed} km/h</p>
     </div>
   );
 };
