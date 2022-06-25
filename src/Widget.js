@@ -4,7 +4,10 @@ import { useEffect, useState } from "react";
 
 const Widget = () => {
   const [result, setResult] = useState("");
-  const [query, setQuery] = useState("Washington");
+  const [query, setQuery] = useState("Zagreb");
+  let connectionString = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${process.env.REACT_APP_APIKEY}&units=metric`;
+
+
   useEffect(() => {
     axios.get(process.env.CONNECTIONSTRING).then((response) => {
       setResult(response.data);
