@@ -7,8 +7,9 @@ const Widget = () => {
   const [query, setQuery] = useState("Zagreb");
   let connectionString = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${process.env.REACT_APP_APIKEY}&units=metric`;
 
+
   useEffect(() => {
-    axios.get(connectionString).then((response) => {
+    axios.get(process.env.CONNECTIONSTRING).then((response) => {
       setResult(response.data);
     });
   }, [result]);
