@@ -1,8 +1,7 @@
 import axios from "axios";
 import "./Widget.css";
 import { useEffect, useState } from "react";
-import dotenv from "dotenv";
-dotenv.config();
+
 const Widget = () => {
   const [result, setResult] = useState("");
   const [query, setQuery] = useState("Washington");
