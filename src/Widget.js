@@ -9,7 +9,7 @@ const Widget = () => {
 
 
   useEffect(() => {
-    axios.get(process.env.CONNECTIONSTRING).then((response) => {
+    axios.get(connectionString).then((response) => {
       setResult(response.data);
     });
   }, [result]);
