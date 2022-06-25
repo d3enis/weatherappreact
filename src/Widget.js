@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 const Widget = () => {
   const [result, setResult] = useState("");
   const [query, setQuery] = useState("Washington");
-  let connectionString = process.env.CONNECTIONSTRING;
   useEffect(() => {
-    axios.get(connectionString).then((response) => {
+    axios.get(process.env.CONNECTIONSTRING).then((response) => {
       setResult(response.data);
     });
   }, [result]);
